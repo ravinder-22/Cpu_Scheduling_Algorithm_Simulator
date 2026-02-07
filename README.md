@@ -1,53 +1,136 @@
-# CpuSchedulingSimulator
-A C++ project simulating CPU scheduling algorithms
+# 🖥️ CPU Scheduling Simulator (C++)
 
+A comprehensive **CPU Scheduling Simulator** written in **C++** that demonstrates and compares classical CPU scheduling algorithms used in Operating Systems.  
+The program provides **Gantt charts**, **process execution tables**, and **average waiting & turnaround times** for clear visualization and analysis.
 
-# CPU Scheduling Simulator (C++)
+---
 
-This project simulates various CPU scheduling algorithms in C++. The user can input process information and choose among:
+## ✨ Features
 
-- FCFS (First Come First Serve)
-- SJF (Non-Preemptive)
-- SJF (Preemptive)
-- SRTF (Shortest Remaining Time First)
-- Priority Scheduling (Non-Preemptive)
-- Priority Scheduling (Preemptive)
-- Round Robin Scheduling
+- Menu-driven interactive simulator
+- Colored terminal output for better readability
+- Accurate handling of CPU idle time
+- Detailed process execution table
+- Automatic calculation of:
+  - Completion Time (CT)
+  - Turnaround Time (TAT)
+  - Waiting Time (WT)
+- Gantt Chart visualization for each algorithm
 
-- ### Data Structures:
-- `vector<Process>` – to store process list
-- `priority_queue` – used in SJF, SRTF, and Priority scheduling for efficient selection
-- `queue<int>` – used in Round Robin to simulate circular queue
-- `pair`, `tuple` – for maintaining Gantt chart and priority-based queues
-- ### Algorithm:
-Sorting Algorithm
+---
 
-std::sort()
-➤ Used to sort processes based on arrival time before scheduling.
+## 🧠 Scheduling Algorithms Implemented
 
-Min Heap (Priority Queue)
+1. **First Come First Serve (FCFS)**
+2. **Shortest Job First (Non-Preemptive)**
+3. **Shortest Job First (Preemptive) / SRTF**
+4. **Priority Scheduling (Non-Preemptive)**
+5. **Priority Scheduling (Preemptive)**
+6. **Round Robin Scheduling** (User-defined Time Quantum)
 
-std::priority_queue with greater<>
-➤ Used to select process with:
+> Note: Lower priority number indicates **higher priority**.
 
-Minimum burst time (in SJF/SRTF)
+---
 
-Highest priority (in Priority Scheduling)
+## 🛠️ Technologies Used
 
-Queue (FIFO)
+- **Language:** C++
+- **Core Concepts:**
+  - CPU Scheduling
+  - Priority Queue
+  - Queue
+  - Sorting Algorithms
+  - Preemptive & Non-Preemptive Scheduling
+- **Libraries:**
+  - `<iostream>`
+  - `<vector>`
+  - `<queue>`
+  - `<algorithm>`
+  - `<tuple>`
+  - `<iomanip>`
 
-std::queue<int>
-➤ Used for Round Robin to manage process order in cyclic manner.
+---
 
-Greedy Logic
-➤ Used in all scheduling techniques to always pick the best possible process based on current time and condition (shortest/priority/first-arrived).
+## ▶️ How to Compile and Run
 
-Condition Checks and Simulation Loops
-➤ Custom time simulation using while loops and conditions based on process readiness.
-
-
-## How to Run
-
-1. Compile:
+### Compile
 ```bash
-g++ main.cpp -o scheduler
+g++ cpu_scheduling.cpp -o cpu_scheduling
+```
+
+---
+
+## 🧪 Sample Input
+
+```text
+Enter the number of processes: 3
+
+--- Process P1 ---
+Arrival Time: 0
+Burst Time: 5
+Priority: 2
+
+--- Process P2 ---
+Arrival Time: 1
+Burst Time: 3
+Priority: 1
+
+--- Process P3 ---
+Arrival Time: 2
+Burst Time: 4
+Priority: 3
+```
+---
+
+## 📊 Output Description
+
+### 🔹 Gantt Chart
+Displays:
+- Execution order of processes
+- CPU idle intervals
+- Start and completion times
+
+### 🔹 Process Execution Table
+Includes:
+- Process ID (PID)
+- Arrival Time
+- Burst Time
+- Priority
+- Completion Time
+- Turnaround Time
+- Waiting Time
+
+---
+
+## 📁 Project Structure
+
+```text
+├── cpu_scheduling.cpp
+├── README.md
+```
+
+---
+
+## 🎯 Learning Outcomes
+
+- Strong understanding of classical CPU scheduling algorithms  
+- Clear comparison between different scheduling strategies  
+- Visualization of context switching and CPU idle time  
+- Practical implementation of Operating Systems scheduling concepts
+
+---
+
+## 🚀 Future Enhancements
+
+- Multilevel Queue Scheduling  
+- Multilevel Feedback Queue Scheduling  
+- Starvation prevention using Aging  
+- Graphical User Interface (GUI)  
+- Exportable Gantt chart output
+
+---
+
+## 👨‍💻 Author
+
+**Ravinder Singh**  
+Mathematics & Computing Technology
